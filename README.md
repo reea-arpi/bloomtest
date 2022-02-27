@@ -8,3 +8,5 @@ Helpful application for search for Companies in "CompaniesHouse UK" API
 * update .env with propper values, including database credentials and API key and URL
 * Create database, run in terminal: rake db:crate
 * Create tables, run in termina:    rake db:migrate
+
+test app: https://bloomtest-staging.herokuapp.com
