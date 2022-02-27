@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
     else
       message = "No company were selected"
     end
-    redirect_to root_path, alert: message
+    redirect_to root_path(search_string: params[:search_string]), alert: message
   end
 
   def delete_companies
