@@ -1,0 +1,15 @@
+<main class="results-index">
+  <div class="container-fluid p-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 mt-3 text-lg-center m-auto display-6 fw-bolder">
+          There are <%= @companies.length %> favorite companies
+        </div>
+      </div>
+      <!-- results -->
+      <section class="py-5">
+        <%= render partial: 'company_list', locals: {companies: @companies, form_action: '/delete_companies', link_target: '/', link_text: 'Search for Companies', button_text: 'Remove selected'} %>
+      </section>
+    </div>
+  </div>
+</main>
