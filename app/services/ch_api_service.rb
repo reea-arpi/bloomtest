@@ -1,4 +1,4 @@
-require 'oauth2'
+require 'net/http'
 
 class ChApiService
   DEFAULT_API_URL = "https://api.companieshouse.gov.uk"
