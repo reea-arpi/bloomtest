@@ -4,14 +4,14 @@
       <div class="row">
         <div class="col-lg-12 mt-3 text-lg-center m-auto display-6 fw-bolder">
           <% if params[:search_string].present?  %>
-            Found <%= @companies['items'].length %> companies for "<%= params[:search_string] %>"
+            Found <%= @companies.length %> companies for "<%= params[:search_string] %>"
           <% end %>
         </div>
       </div>
       <!-- results -->
-      <% if params[:search_string].present? && @companies['items'].length > 0 %>
+      <% if params[:search_string].present? && @companies.length > 0 %>
         <section class="py-5">
-          <%= render partial: 'company_list', locals: {companies: @companies['items'], form_action: '/save_companies', link_target: '/favorite_companies', link_text: 'Favorite Companies', button_text: 'Save selected'} %>
+          <%= render partial: 'company_list', locals: {companies: @companies, form_action: '/save_companies', link_target: '/favorite_companies', link_text: 'Favorite Companies', button_text: 'Save selected'} %>
         </section>
       <% end %>
     </div>

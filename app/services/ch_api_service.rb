@@ -64,11 +64,11 @@ class ChApiService
     resp = request_resource(uri)
 
     begin
-      # parse request response
-      parse_api_response(resp)
-
       # end the connection
       end_connection
+
+      # parse request response
+      parse_api_response(resp)
     rescue StandardError => e
       raise e
     end
@@ -91,7 +91,7 @@ class ChApiService
     # parse the response according to response status code
     case resp.code
     when "200"
-      JSON[resp.body]
+      JSON.parse(resp.body)['items'] rescue []
     when "401"
       raise ArgumentError, "Authentication error"
     when "404"
